@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">CardInfoApp</string>
+    <string name="search">Search</string>
+    <string name="search_history">Search history</string>
+    <string name="search_placeholder">Search</string>
+    <string name="back">Back</string>
+    <string name="card_not_found">Card with this number not found</string>
+    <string name="error_message">Something went wrong</string>
+    <string name="empty_history">Search history is empty</string>
+    <string name="scheme">scheme:&#160;</string>
+    <string name="type">type:&#160;</string>
+    <string name="brand">brand:&#160;</string>
+    <string name="prepaid">prepaid:&#160;</string>
+    <string name="country">country:&#160;</string>
+    <string name="numeric">numeric:&#160;</string>
+    <string name="alpha2">alpha2:&#160;</string>
+    <string name="name">name:&#160;</string>
+    <string name="emoji">emoji:&#160;</string>
+    <string name="currency">currency:&#160;</string>
+    <string name="latitude">latitude:&#160;</string>
+    <string name="longitude">longitude:&#160;</string>
+    <string name="bank">bank:&#160;</string>
+    <string name="url">url:&#160;</string>
+    <string name="phone">phone:&#160;</string>
+    <string name="city">city:&#160;</string>
+</resources>
