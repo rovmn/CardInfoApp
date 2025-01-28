@@ -57,22 +57,44 @@ fun CardInfoView (
         Row {
             TitleText(stringResource(R.string.country))
             Column {
-                Text(card.country.numeric?.toString() ?: "")
-                Text(card.country.alpha2?.toString() ?: "")
-                Text(card.country.name?.toString() ?: "")
-                Text(card.country.emoji?.toString() ?: "")
-                Text(card.country.currency?.toString() ?: "")
-                Text(card.country.latitude?.toString() ?: "")
-                Text(card.country.longitude?.toString() ?: "")
+                card.country.numeric?.let {
+                    Text(stringResource(R.string.numeric) + it.toString())
+                }
+                card.country.alpha2?.let {
+                    Text(stringResource(R.string.alpha2) + it.toString())
+                }
+                card.country.name?.let {
+                    Text(stringResource(R.string.name) + it.toString())
+                }
+                card.country.emoji?.let {
+                    Text(stringResource(R.string.emoji) + it.toString())
+                }
+                card.country.currency?.let {
+                    Text(stringResource(R.string.currency) + it.toString())
+                }
+                card.country.latitude?.let {
+                    Text(stringResource(R.string.latitude) + it.toString())
+                }
+                card.country.longitude?.let {
+                    Text(stringResource(R.string.longitude) + it.toString())
+                }
             }
         }
         Row {
             TitleText(stringResource(R.string.bank))
             Column {
-                Text(card.bank.name?.toString() ?: "")
-                Text(card.bank.url?.toString() ?: "")
-                Text(card.bank.phone?.toString() ?: "")
-                Text(card.bank.city?.toString() ?: "")
+                card.bank.name?.let {
+                    Text(stringResource(R.string.name) + it.toString())
+                }
+                card.bank.url?.let {
+                    Text(stringResource(R.string.url) + it.toString())
+                }
+                card.bank.phone?.let {
+                    Text(stringResource(R.string.phone) + it.toString())
+                }
+                card.bank.city?.let {
+                    Text(stringResource(R.string.city) + it.toString())
+                }
             }
         }
     }
