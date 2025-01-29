@@ -1,6 +1,8 @@
 package com.example.cardinfoapp.di
 
 import com.example.cardinfoapp.data.remote.CardApi
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,20 +20,32 @@ class CardApiModule {
 
     @Provides
     @Singleton
-    fun provideCardApi(): CardApi {
+    fun provideCardApi(
+        gson: Gson,
+        client: OkHttpClient
+    ): CardApi {
+        return Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .client(client)
+            .build()
+            .create(CardApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideJsonConverter(): Gson = GsonBuilder()
+        .create()
+
+    @Provides
+    @Singleton
+    fun provideOkHttpClient(): OkHttpClient{
 
         val interceptor = HttpLoggingInterceptor()
             .setLevel(HttpLoggingInterceptor.Level.BODY)
 
-        val client = OkHttpClient.Builder()
+        return OkHttpClient.Builder()
             .addInterceptor(interceptor)
             .build()
-
-        return Retrofit.Builder()
-            .baseUrl(baseUrl)
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(client)
-            .build()
-            .create(CardApi::class.java)
     }
 }
