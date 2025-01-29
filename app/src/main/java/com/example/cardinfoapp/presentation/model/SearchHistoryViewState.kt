@@ -6,5 +6,5 @@ import com.example.cardinfoapp.domain.util.Result
 
 data class SearchHistoryViewState(
     val result: Result<List<Card>> = EmptyResult(),
-    val isInProgress: Boolean = false
+    val isInProgress: Boolean = true
 )
